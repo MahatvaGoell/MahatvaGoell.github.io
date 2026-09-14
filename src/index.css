@@ -317,3 +317,118 @@ em { font-weight: inherit; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .motion-toggle { display: none; }
 }
+
+/* Calm, readable presentation layer */
+:root {
+  --dark: #1d2521;
+  --paper: #f7f6f1;
+  --accent: #9ccf83;
+  --muted: #9da39b;
+  --line: #ffffff24;
+  --rail: 0px;
+  --gutter: clamp(24px, 6vw, 112px);
+  --section-space: clamp(64px, 7vw, 104px);
+  --heading-lg: clamp(46px, 5.6vw, 82px);
+  --heading-md: clamp(34px, 3.5vw, 56px);
+}
+
+.portfolio { padding-right: 0; background: var(--dark); }
+.edition-rail { display: none; }
+.site-header { right: 0; height: 72px; padding: 0 var(--gutter); background: #1d2521f2; border-bottom: 1px solid #ffffff12; backdrop-filter: blur(14px); }
+.site-header.is-scrolled { background: #1d2521fa; }
+.wordmark { font-size: 25px; letter-spacing: -.06em; }
+.header-note { font-size: 10px; opacity: .82; }
+.menu-toggle { gap: 12px; font-size: 13px; }
+.site-menu { top: 84px; right: var(--gutter); width: min(440px, calc(100vw - 40px)); border-radius: 3px; }
+
+.hero { min-height: min(820px, 92svh); display: flex; flex-direction: column; justify-content: center; padding-top: 140px; padding-bottom: 62px; }
+.hero-topline { order: 0; max-width: 960px; padding-bottom: 18px; }
+.hero-title { order: 1; max-width: 930px; font-size: clamp(76px, 9vw, 148px); line-height: .9; letter-spacing: -.055em; margin-top: clamp(30px, 4vw, 52px); }
+.hero-title .last-name { margin-left: 7%; }
+.hero-note { order: 2; width: min(100%, 470px); justify-self: auto; align-self: flex-start; margin-top: clamp(28px, 4vw, 48px); }
+.hero-note p { font-size: clamp(18px, 1.45vw, 22px); }
+.hero-note > span { max-width: 390px; font-size: 14px; }
+.hero-foot { order: 3; position: static; left: auto; right: auto; bottom: auto; margin-top: auto; padding-top: 60px; }
+.hero-socials { gap: 20px; }
+.scroll-invitation { font-size: 19px; gap: 18px; }
+.edition { display: none; }
+
+.light-section { --muted: #6e746c; --line: #1d25211a; }
+.intro, .stack-section, .recognition, .background-section { padding-top: var(--section-space); padding-bottom: var(--section-space); }
+.chapter-label { font-size: 10px; padding-bottom: 16px; }
+.chapter-heading h2 { margin-top: 34px; letter-spacing: -.035em; }
+.intro-grid { grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr); gap: clamp(32px, 6vw, 88px); margin-top: 52px; max-width: 1080px; }
+.intro-side { display: none; }
+.portrait-placeholder { max-width: 350px; aspect-ratio: 4 / 4.4; }
+.intro-copy .lead { font-size: clamp(22px, 2vw, 30px); line-height: 1.42; }
+.intro-copy > p:not(.lead) { font-size: 15px; max-width: 580px; }
+.manifesto { display: block; max-width: 1050px; padding-top: 72px; margin-top: 72px; border-top: 1px solid var(--line); }
+.manifesto > p { padding: 0; margin-bottom: 12px; font-size: 26px; }
+.manifesto h2 { max-width: 760px; font-size: clamp(56px, 7vw, 100px); line-height: .95; letter-spacing: -.045em; }
+.manifesto-disciplines { display: flex; margin-top: 28px; max-width: 720px; font-size: 9px; gap: 12px 24px; }
+
+.work-section { height: auto; background: #ecece5; --muted: #687069; --line: #1d252119; padding-bottom: var(--section-space); }
+.work-header { height: auto; padding-top: var(--section-space); padding-bottom: 38px; }
+.work-track { display: flex; flex-direction: column; gap: 24px; padding: 0 var(--gutter); }
+.spread-slot { width: 100%; padding: 0; }
+.project-spread { height: auto; grid-template-columns: minmax(280px, .9fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 66px); min-height: 0; padding: clamp(22px, 3.5vw, 46px); background: #f8f8f4; border: 1px solid #1d252112; }
+.project-visual { min-height: clamp(290px, 28vw, 410px); }
+.project-copy { padding: 2px 0; }
+.project-copy h3 { margin: 9px 0 16px; }
+.project-description { font-size: 15px; }
+.project-highlights { margin: 18px 0; }
+.project-links { gap: 22px; }
+.project-visual:hover > div { transform: none; }
+
+.section-aside { margin-top: 24px; }
+.marquee { margin-top: 44px; }
+.skill-groups { margin-top: 40px; }
+.skill-row { padding: 24px 0; }
+.recognition-list, .background-rows { margin-top: 52px; }
+.recognition-row { padding: 24px 0; }
+.recognition-number { font-size: clamp(68px, 7vw, 108px); }
+.background-rows article { padding: 26px 0; }
+.contact { padding-top: var(--section-space); }
+.contact-title { max-width: 1080px; font-size: clamp(66px, 8vw, 128px); line-height: .92; margin-top: 46px; }
+.contact-title > svg { width: clamp(42px, 6vw, 76px); height: auto; }
+.contact-body { margin-top: 46px; }
+
+@media (max-width: 860px) {
+  :root { --gutter: clamp(22px, 5vw, 48px); }
+  .hero { min-height: 700px; }
+  .hero-title { font-size: clamp(68px, 11vw, 108px); }
+  .intro-grid, .project-spread { grid-template-columns: 1fr; }
+  .portrait-placeholder { max-width: 310px; }
+  .project-visual { min-height: 340px; }
+  .project-copy { gap: 16px; }
+}
+
+@media (max-width: 620px) {
+  :root { --gutter: 22px; --section-space: 58px; --heading-lg: clamp(42px, 12vw, 60px); }
+  .site-header { height: 64px; }
+  .header-note { display: none; }
+  .site-menu { right: 16px; top: 74px; }
+  .hero { min-height: 640px; padding-top: 104px; padding-bottom: 34px; }
+  .hero-topline { font-size: 8px; }
+  .hero-topline > span:last-child { display: none; }
+  .hero-title { font-size: clamp(64px, 18vw, 92px); margin-top: 28px; }
+  .hero-title .last-name { margin-left: 4%; }
+  .hero-note { margin-top: 24px; }
+  .hero-note p { font-size: 17px; }
+  .hero-note > span { font-size: 13px; }
+  .hero-foot { padding-top: 42px; gap: 20px; align-items: flex-end; }
+  .hero-socials { gap: 12px 18px; max-width: 190px; }
+  .scroll-invitation { max-width: 124px; font-size: 17px; }
+  .intro-grid { margin-top: 38px; gap: 28px; }
+  .portrait-placeholder { max-width: 250px; }
+  .manifesto { padding-top: 48px; margin-top: 56px; }
+  .manifesto h2 { font-size: clamp(50px, 15vw, 76px); }
+  .work-header { padding-bottom: 30px; }
+  .work-track { gap: 16px; }
+  .project-spread { padding: 18px; gap: 24px; }
+  .project-visual { min-height: 285px; }
+  .project-copy h3 { font-size: 46px; }
+  .recognition-row { grid-template-columns: 75px 1fr; gap: 16px; }
+  .recognition-number { font-size: 70px; }
+  .contact-title { font-size: clamp(58px, 16vw, 82px); }
+}

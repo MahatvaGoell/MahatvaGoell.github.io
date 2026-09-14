@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react'
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Asterisk, Pause, Play } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, Asterisk, Pause, Play } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from 'lenis'
@@ -18,11 +18,7 @@ function ExternalLink({ href, children }) {
 
 export default function App() {
   const root = useRef(null)
-  const work = useRef(null)
-  const track = useRef(null)
   const lenis = useRef(null)
-  const workAnimation = useRef(null)
-  const [activeProject, setActiveProject] = useState(0)
   const [detail, setDetail] = useState(null)
   const [marqueePaused, setMarqueePaused] = useState(false)
 
@@ -43,25 +39,12 @@ export default function App() {
         gsap.from('.contact-title', { y: 60, opacity: 0, duration: 1.2, scrollTrigger: { trigger: '.contact', start: 'top 75%', once: true } })
         return () => { gsap.ticker.remove(tick); smooth.destroy(); lenis.current = null }
       })
-      media.add('(min-width: 1000px) and (min-height: 700px) and (prefers-reduced-motion: no-preference)', () => {
-        const distance = () => track.current.scrollWidth - work.current.clientWidth
-        const animation = gsap.to(track.current, { x: () => -distance(), ease: 'none', scrollTrigger: { trigger: work.current, start: 'top 64px', end: () => `+=${distance()}`, pin: true, scrub: 0.65, invalidateOnRefresh: true, onUpdate: (self) => setActiveProject(Math.round(self.progress * (projects.length - 1))) } })
-        workAnimation.current = animation
-        return () => { workAnimation.current = null }
-      })
     }, root)
     let disposed = false
     document.fonts.ready.then(() => { if (!disposed) ScrollTrigger.refresh() })
     return () => { disposed = true; media.revert(); context.revert() }
   }, [])
 
-  const goToProject = (index, immediate = false) => {
-    const trigger = workAnimation.current?.scrollTrigger
-    if (!trigger) return
-    const position = trigger.start + ((trigger.end - trigger.start) * index) / (projects.length - 1)
-    if (lenis.current) lenis.current.scrollTo(position, { immediate, duration: 0.85 })
-    else window.scrollTo({ top: position, behavior: immediate ? 'instant' : 'smooth' })
-  }
   const openProject = (project) => { lenis.current?.stop(); setDetail(project) }
   const closeProject = () => { setDetail(null); lenis.current?.start() }
 
@@ -81,9 +64,9 @@ export default function App() {
         <div className="manifesto" data-reveal><p>I build</p><h2>intelligent<br /><em>systems.</em></h2><div className="manifesto-disciplines"><span>ARTIFICIAL INTELLIGENCE</span><span>MACHINE LEARNING</span><span>DEEP LEARNING</span><span>SOFTWARE ENGINEERING</span></div></div>
       </section>
 
-      <section id="work" className="work-section" ref={work} aria-label="Selected projects">
-        <div className="work-header page-padding"><p className="chapter-label"><span>CHAPTER II</span><span>SELECTED WORK</span></p><h2>Ideas, <em>made real.</em></h2><div className="work-controls"><button onClick={() => goToProject(Math.max(0, activeProject - 1))} disabled={activeProject === 0} aria-label="Previous project"><ArrowLeft size={20} /></button><span aria-live="polite">0{activeProject + 1} <i>/ 03</i></span><button onClick={() => goToProject(Math.min(2, activeProject + 1))} disabled={activeProject === 2} aria-label="Next project"><ArrowRight size={20} /></button></div></div>
-        <div className="work-track" ref={track}>{projects.map((project, index) => <div className="spread-slot" key={project.slug} onFocusCapture={() => goToProject(index, true)}><ProjectCard project={project} onOpen={openProject} /></div>)}</div>
+      <section id="work" className="work-section" aria-label="Selected projects">
+        <div className="work-header page-padding"><p className="chapter-label"><span>CHAPTER II</span><span>SELECTED WORK</span></p><h2>Ideas, <em>made real.</em></h2></div>
+        <div className="work-track">{projects.map((project) => <div className="spread-slot" key={project.slug}><ProjectCard project={project} onOpen={openProject} /></div>)}</div>
       </section>
 
       <section id="stack" className="stack-section light-section">
