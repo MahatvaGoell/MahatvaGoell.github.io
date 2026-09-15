@@ -26,7 +26,7 @@ function GaitDiagram() {
 export default function ProjectVisual({ project }) {
   return <div className={`project-visual ${project.slug}`}>
     {project.slug === 'sentinels' ? <SentinelsImage /> : project.slug === 'gait' ? <GaitDiagram /> : <div className="pending-diagram">
-      <div className="visual-caption"><span>PROJECT / 03</span><span>IN PROGRESS</span></div><ScanLine strokeWidth={0.6} className="pending-icon" /><div className="pending-title">A study<br /><em>in progress.</em></div><p className="visual-footnote">PNEUMONIA DETECTION · DOCUMENTATION FORTHCOMING</p>
+    <div className="visual-caption"><span>PROJECT / 03</span><span>RESNET50 + GRAD-CAM</span></div><ScanLine strokeWidth={0.6} className="pending-icon" /><div className="pending-title">Seeing<br /><em>the signal.</em></div><p className="visual-footnote">PNEUMONIA DETECTION · ENGINEERING PROTOTYPE</p>
     </div>}
   </div>
 }

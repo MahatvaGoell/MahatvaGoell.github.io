@@ -16,6 +16,16 @@ export const projects = [
     highlights: ['5 concurrent inspection agents', 'Deterministic 0–100 security score', 'Optional plain-language AI summary'],
     details: 'Five agents inspect headers, reconnaissance information, TLS, exposed paths and DNS concurrently. Findings feed a deterministic scoring system; an optional Groq layer explains the result in plain language. Checks are passive and intended for sites you own or are authorized to inspect.',
     url: 'https://github.com/TeamElara/SentinelsAI',
+    caseStudy: {
+      role: 'Security engineering',
+      year: '2026',
+      sections: [
+        { id: 'problem', label: 'Problem', body: 'Security checks are most useful when they make a site easier to understand without behaving like an attack. Sentinels turns public, read-only signals into a concise security inspection report for sites an operator owns or is authorised to inspect.' },
+        { id: 'workflow', label: 'Workflow', body: 'Five agents run concurrently so a single scan can inspect several independent signals at once.', points: ['Headers: CSP, HSTS, X-Content-Type-Options and related headers', 'Recon: site technology and sensitive paths disclosed by robots.txt', 'TLS, exposure and DNS: certificate information, public paths, SPF and DMARC'] },
+        { id: 'decision', label: 'Key decision', decision: { chose: 'Passive, browser-like inspection only', rejected: ['SQL injection, brute force and fuzzing', 'Form submission or denial-of-service traffic'] }, body: 'The boundary is intentional: every check reads information already presented publicly. That keeps the workflow useful for an authorised review while avoiding harmful probe behaviour.' },
+        { id: 'state', label: 'What it delivers', body: 'Findings feed a deterministic 0–100 score and A–F grade, so the same target produces the same result. An optional Groq-powered layer can translate the report into plain language; the core report still works without an AI key.', points: ['Live progress through Server-Sent Events', 'PDF report export using Playwright', 'FastAPI backend with a Next.js and Tailwind interface'] },
+      ],
+    },
   },
   {
     number: '02',
@@ -27,18 +37,37 @@ export const projects = [
     highlights: ['Per-recording signal alignment', '100 Hz segmented exports', 'Provisional six-phase gait labels'],
     details: 'FMG and insole streams are aligned through trigger events. The workflow preserves raw recordings, flags estimated samples, and exports graphs and segmented signals. Current phase labels are provisional; review and model training are the next stages.',
     url: 'https://github.com/MahatvaGoell/Gait-Analysis-',
+    caseStudy: {
+      role: 'Research data workflow',
+      year: '2026',
+      sections: [
+        { id: 'problem', label: 'Problem', body: 'Walking recordings combine force-myography and insole streams that need to be aligned before they can be inspected or used for phase segmentation. Real recordings also contain missing samples, timestamp resets and inconsistent triggers that should be retained and documented rather than hidden.' },
+        { id: 'workflow', label: 'Workflow', body: 'Each trial preserves its own elapsed recording time. Trigger events align the FMG and insole signals, while pressure-cycle landmarks and FMG activity help estimate the walking sequence.', points: ['Eight FMG channels, centre of pressure and vGRF graphed per recording', 'Six provisional phases: QS, GI, SSSW, SLT, SSLW and GT', '100 Hz exports include labels and flags for estimated samples'] },
+        { id: 'decision', label: 'Key decision', decision: { chose: 'Per-recording timing estimates with visible missing-data flags', rejected: ['One fixed timing template for every participant', 'Treating incomplete recordings as fully observed data'] }, body: 'The workflow keeps original finite source values unchanged. When a value has to be estimated for a completed plot, the estimate is documented and flagged in the exported data.' },
+        { id: 'state', label: 'Current state', body: 'The saved phase labels are signal-derived training candidates, not independently verified clinical or ground-truth annotations. The next stage is review, then a participant-aware sequence-segmentation model trained on the reviewed labels.', points: ['Completed graph folders for ten dataset folders', 'Verification files for Subjects 01–04', 'Review sheets and synchronisation reports kept alongside exports'] },
+      ],
+    },
   },
   {
     number: '03',
     slug: 'pneumonia',
     name: 'Pneumonia Detection',
-    subtitle: 'RESNET50 PROJECT — IN PROGRESS',
-    stack: ['ResNet50'],
-    description: 'An in-progress repository for a pneumonia-detection project. Public documentation and project visuals are forthcoming.',
-    highlights: ['Repository created', 'Documentation forthcoming', 'Project visuals forthcoming'],
-    details: 'The public repository is currently empty. Implementation details, evaluation results and visuals will be added when they are documented.',
+    subtitle: 'RESNET50 + GRAD-CAM PROTOTYPE',
+    stack: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'Gradio', 'ResNet50'],
+    description: 'A chest X-ray classification prototype using ResNet50 transfer learning with Grad-CAM visual explanations.',
+    highlights: ['Normal / pneumonia classification', 'Grad-CAM heatmap visualisations', 'Gradio interface with confidence output'],
+    details: 'This is a deep-learning prototype built around ResNet50 transfer learning for chest X-ray classification. Grad-CAM visualisations expose the areas used by the model in a prediction. It is presented as a technical project, not a clinical diagnostic tool.',
     url: 'https://github.com/MahatvaGoell/Pneumonia-Detection-Using-ResNet50',
-    inProgress: true,
+    caseStudy: {
+      role: 'Deep learning prototype',
+      year: '2026',
+      sections: [
+        { id: 'problem', label: 'Problem', body: 'The project explores a reproducible workflow for classifying chest X-ray images into normal and pneumonia classes with transfer learning. It is a technical prototype rather than a clinical diagnostic tool.' },
+        { id: 'workflow', label: 'Workflow', body: 'A ResNet50 model is trained and used for binary classification. The repository separates training, prediction and Grad-CAM generation into dedicated scripts.', points: ['train.py for model training', 'predict.py for inference', 'gradcam.py for model visualisation', 'app.py for the Gradio interface'] },
+        { id: 'decision', label: 'Key decision', decision: { chose: 'Grad-CAM alongside prediction output', rejected: ['A confidence score without visual context'] }, body: 'The interface pairs the predicted class and confidence output with a heatmap of the image regions used by the model, making the model behaviour easier to inspect during development.' },
+        { id: 'state', label: 'Current state', body: 'The repository documents the stack, training and launch workflow, plus a Gradio interface. It does not publish a validated clinical evaluation, so the project should be read as an engineering prototype and learning exercise.', points: ['TensorFlow and Keras implementation', 'OpenCV, NumPy and Matplotlib support', 'Chest X-ray Pneumonia dataset referenced in the repository documentation'] },
+      ],
+    },
   },
 ]
 
