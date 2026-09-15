@@ -337,10 +337,10 @@ em { font-weight: inherit; }
 
 .portfolio { padding-right: 0; background: var(--dark); }
 .edition-rail { display: none; }
-.site-header { right: 0; height: 72px; padding: 0 var(--gutter); color: var(--dark); background: #f3f6eef2; border-bottom: 1px solid #1d252112; backdrop-filter: blur(14px); }
-.site-header.is-scrolled { color: var(--paper); background: #1d2521fa; border-bottom-color: #ffffff12; }
+.site-header { right: 0; height: 72px; padding: 0 var(--gutter); color: #f8f1f6; background: #201a21f4; border-bottom: 1px solid #f2dbe824; backdrop-filter: blur(14px); }
+.site-header.is-scrolled { color: #f8f1f6; background: #171317fa; border-bottom-color: #f2dbe824; }
 .wordmark { font-size: 25px; letter-spacing: -.06em; }
-.wordmark span { color: var(--hero-accent); }
+.wordmark span { color: #e7b8d2; }
 .header-note { font-size: 10px; opacity: .82; }
 .menu-toggle { gap: 12px; font-size: 13px; }
 .site-menu { top: 84px; right: var(--gutter); width: min(440px, calc(100vw - 40px)); border-radius: 3px; }

@@ -1,9 +1,9 @@
 import { ScanLine } from 'lucide-react'
-import sentinelsProject from '../assets/sentinels-project.jpeg'
+import sentinelsProject from '../assets/sentinels-project-photo.jpeg'
 
 function SentinelsImage() {
   return <div className="sentinels-image">
-    <img src={sentinelsProject} alt="Sentinels interface showing a GitHub repository scan" />
+    <img src={sentinelsProject} alt="Sentinels GitHub repository scan displayed on a laptop" />
   </div>
 }
 
