@@ -389,7 +389,7 @@ em { font-weight: inherit; }
 .edition { display: none; }
 
 .light-section { --muted: #6e746c; --line: #1d25211a; }
-.recognition { background: linear-gradient(180deg, #f7f6f1 0%, #e4e8dc 22%, #cdd5bd 48%, #bbc5a8 70%, #bbc5a8 100%); color: #303b30; --muted: #5d685a; --line: #303b3020; }
+.recognition { background: linear-gradient(180deg, #f7f6f1 0%, #e4e8dc 18%, #cdd5bd 38%, #bbc5a8 58%, #bbc5a8 76%, #dbe0d2 90%, #f7f6f1 100%); color: #303b30; --muted: #5d685a; --line: #303b3020; }
 .recognition .chapter-heading h2 em, .recognition-number { color: #6f8069; }
 .intro, .stack-section, .recognition, .background-section { padding-top: var(--section-space); padding-bottom: var(--section-space); }
 .chapter-label { font-size: 10px; padding-bottom: 16px; }
