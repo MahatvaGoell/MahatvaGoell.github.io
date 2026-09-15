@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import SectionHeading from './components/SectionHeading'
 import ProjectCard from './components/ProjectCard'
 import ProjectDetail from './components/ProjectDetail'
+import mahatvaPortrait from './assets/mahatva-portrait.jpeg'
 import { achievements, profile, projects, skillGroups, stackRows } from './data/portfolio'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -60,7 +61,7 @@ export default function App() {
 
       <section id="about" className="intro light-section page-padding">
         <SectionHeading index="I" label="THE PERSON & THE PURPOSE">A curious mind.<br /><em>A practical approach.</em></SectionHeading>
-        <div className="intro-grid"><div className="portrait-placeholder" role="img" aria-label="Space reserved for Mahatva’s portrait"><span className="portrait-mark">mg.</span><span className="portrait-label">PORTRAIT FORTHCOMING</span></div><div className="intro-copy" data-reveal><p className="lead">I’m Mahatva, a Computer Science Engineering student specialising in AI & ML at Amity University.</p><p>I enjoy connecting intelligent models with practical software engineering — from security tools to research workflows with multimodal sensor data.</p><p>I’m drawn to real problems, thoughtful experiments, and systems that make a difference beyond the screen.</p><a href="#work" className="underlined-link">Explore my work <ArrowDown size={18} /></a></div><div className="intro-side"><span>01 / IN PURSUIT OF UNDERSTANDING</span><Asterisk size={36} strokeWidth={1} /></div></div>
+        <div className="intro-grid"><figure className="portrait-image"><img src={mahatvaPortrait} alt="Mahatva Goel standing outdoors against a blue evening sky" /></figure><div className="intro-copy" data-reveal><p className="lead">I’m Mahatva, a Computer Science Engineering student specialising in AI & ML at Amity University.</p><p>I enjoy connecting intelligent models with practical software engineering — from security tools to research workflows with multimodal sensor data.</p><p>I’m drawn to real problems, thoughtful experiments, and systems that make a difference beyond the screen.</p><a href="#work" className="underlined-link">Explore my work <ArrowDown size={18} /></a></div><div className="intro-side"><span>01 / IN PURSUIT OF UNDERSTANDING</span><Asterisk size={36} strokeWidth={1} /></div></div>
         <div className="manifesto" data-reveal><p className="manifesto-label">WHAT I BUILD</p><h2>I build <em>intelligent systems.</em></h2><div className="manifesto-details"><p>I’m Mahatva Goel — a Computer Science Engineering student specialising in AI &amp; ML. I enjoy turning thoughtful ideas into useful software, from machine-learning workflows to security-focused tools.</p><dl><div><dt>BASED IN</dt><dd>Noida, India</dd></div><div><dt>STUDYING</dt><dd>B.Tech CSE · AI &amp; ML</dd></div><div><dt>FOCUS</dt><dd>AI, ML &amp; software engineering</dd></div></dl></div><div className="manifesto-disciplines"><span>ARTIFICIAL INTELLIGENCE</span><span>MACHINE LEARNING</span><span>DEEP LEARNING</span><span>SOFTWARE ENGINEERING</span></div></div>
       </section>
 
