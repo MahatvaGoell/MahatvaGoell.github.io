@@ -1,5 +1,5 @@
 import sentinelsProject from '../assets/sentinels-project-photo.jpeg'
-import pneumoniaProject from '../assets/pneumonia-project-visual.png'
+import pneumoniaProject from '../assets/pneumonia-project-editorial.png'
 
 function SentinelsImage() {
   return <div className="sentinels-image">
