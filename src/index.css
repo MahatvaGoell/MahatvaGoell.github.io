@@ -149,7 +149,7 @@ em { font-weight: inherit; }
 .section-aside { display: flex; justify-content: flex-end; margin-top: 30px; }
 .section-aside p { max-width: 330px; font-size: 16px; line-height: 1.6; color: var(--muted); }
 .marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 65px; padding: 22px 0 27px; }
-.marquee > div { display: flex; width: max-content; animation: marquee 55s linear infinite; }
+.marquee > div { display: flex; width: max-content; animation: marquee 42s linear infinite; }
 .marquee-copy { display: flex; }
 .marquee-copy > span { font: 400 clamp(35px, 5vw, 75px)/1 var(--serif); letter-spacing: -.04em; display: flex; gap: 45px; align-items: center; padding-right: 45px; }
 .marquee-copy svg { color: #808c6b; }
