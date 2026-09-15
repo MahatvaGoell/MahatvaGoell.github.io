@@ -1,4 +1,4 @@
-import sentinelsProject from '../assets/sentinels-project-photo.jpeg'
+import sentinelsProject from '../assets/sentinels-project-framed.png'
 
 function SentinelsImage() {
   return <div className="sentinels-image">
