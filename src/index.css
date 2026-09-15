@@ -131,9 +131,18 @@ em { font-weight: inherit; }
 .signal-secondary { opacity: .5; stroke-width: 1; }
 .signal-marker { stroke: currentColor; stroke-opacity: .4; stroke-dasharray: 3 5; }
 .gait-phases { display: flex; justify-content: space-between; font: 9px var(--mono); margin-top: 15px; }
-.project-visual.pneumonia { min-height: 0; aspect-ratio: 1.09; background: #12131b; color: #e4d7ec; }
-.project-visual.pneumonia .pneumonia-image { min-height: 0; height: 100%; padding: 0; overflow: hidden; background: #12131b; }
-.pneumonia-image img { width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: center; }
+.project-visual.pneumonia { min-height: 0; aspect-ratio: 1.09; background: #e5e5df; color: #27302b; }
+.project-visual.pneumonia .pneumonia-minimal { min-height: 0; height: 100%; padding: clamp(18px, 3vw, 36px); overflow: hidden; background: #e5e5df; }
+.pneumonia-minimal { display: flex; flex-direction: column; justify-content: space-between; }
+.pneumonia-minimal-top, .pneumonia-minimal-bottom { display: flex; justify-content: space-between; gap: 12px; font: 9px var(--mono); letter-spacing: .05em; color: #6b746b; }
+.pneumonia-minimal-top span:last-child, .pneumonia-minimal-bottom span:last-child { text-align: right; }
+.pneumonia-minimal svg { width: 100%; height: auto; max-height: 72%; color: #667168; }
+.pneumonia-frame { fill: #eeeee9; stroke: currentColor; stroke-width: 1; }
+.pneumonia-lung { fill: #c7cbc3; opacity: .88; }
+.pneumonia-stem { fill: none; stroke: #8f978d; stroke-width: 6; stroke-linecap: round; }
+.pneumonia-focus { fill: #c99787; opacity: .68; }
+.pneumonia-core { fill: #566259; }
+.pneumonia-signal { fill: none; stroke: #566259; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .pending-icon { width: 95px; height: 95px; align-self: center; margin-top: 24px; }
 .pending-title { font: 400 clamp(35px, 4vw, 62px)/.95 var(--serif); letter-spacing: -.04em; text-align: center; padding: 15px 0; }
 .stack-section { padding-top: var(--section-space); padding-bottom: var(--section-space); }

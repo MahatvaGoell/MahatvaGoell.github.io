@@ -1,5 +1,4 @@
 import sentinelsProject from '../assets/sentinels-project-photo.jpeg'
-import pneumoniaProject from '../assets/pneumonia-project-editorial.png'
 
 function SentinelsImage() {
   return <div className="sentinels-image">
@@ -23,14 +22,24 @@ function GaitDiagram() {
   </div>
 }
 
-function PneumoniaImage() {
-  return <div className="pneumonia-image">
-    <img src={pneumoniaProject} alt="Abstract chest imaging and Grad-CAM visualisation for the Pneumonia Detection project" />
+function PneumoniaMinimal() {
+  return <div className="pneumonia-minimal" role="img" aria-label="Abstract minimal visual representing chest image classification and model attention">
+    <div className="pneumonia-minimal-top"><span>PNEUMONIA DETECTION</span><span>03 / 03</span></div>
+    <svg viewBox="0 0 640 390" aria-hidden="true">
+      <path className="pneumonia-frame" d="M78 38H562V352H78Z" />
+      <path className="pneumonia-lung pneumonia-lung-left" d="M304 113C254 105 173 137 161 215C152 273 187 318 248 315C286 313 306 278 314 237V134C311 126 308 119 304 113Z" />
+      <path className="pneumonia-lung pneumonia-lung-right" d="M336 113C386 105 467 137 479 215C488 273 453 318 392 315C354 313 334 278 326 237V134C329 126 332 119 336 113Z" />
+      <path className="pneumonia-stem" d="M320 84V271" />
+      <circle className="pneumonia-focus" cx="405" cy="215" r="28" />
+      <circle className="pneumonia-core" cx="405" cy="215" r="5" />
+      <path className="pneumonia-signal" d="M116 334H217L239 320L264 345L289 302L316 334H525" />
+    </svg>
+    <div className="pneumonia-minimal-bottom"><span>RESNET50 / GRAD-CAM</span><span>RESEARCH PROTOTYPE</span></div>
   </div>
 }
 
 export default function ProjectVisual({ project }) {
   return <div className={`project-visual ${project.slug}`}>
-    {project.slug === 'sentinels' ? <SentinelsImage /> : project.slug === 'gait' ? <GaitDiagram /> : <PneumoniaImage />}
+    {project.slug === 'sentinels' ? <SentinelsImage /> : project.slug === 'gait' ? <GaitDiagram /> : <PneumoniaMinimal />}
   </div>
 }
