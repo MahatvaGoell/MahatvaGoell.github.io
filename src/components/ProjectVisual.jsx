@@ -1,5 +1,5 @@
-import { ScanLine } from 'lucide-react'
 import sentinelsProject from '../assets/sentinels-project-photo.jpeg'
+import pneumoniaProject from '../assets/pneumonia-project-visual.png'
 
 function SentinelsImage() {
   return <div className="sentinels-image">
@@ -23,10 +23,14 @@ function GaitDiagram() {
   </div>
 }
 
+function PneumoniaImage() {
+  return <div className="pneumonia-image">
+    <img src={pneumoniaProject} alt="Abstract chest imaging and Grad-CAM visualisation for the Pneumonia Detection project" />
+  </div>
+}
+
 export default function ProjectVisual({ project }) {
   return <div className={`project-visual ${project.slug}`}>
-    {project.slug === 'sentinels' ? <SentinelsImage /> : project.slug === 'gait' ? <GaitDiagram /> : <div className="pending-diagram">
-    <div className="visual-caption"><span>PROJECT / 03</span><span>RESNET50 + GRAD-CAM</span></div><ScanLine strokeWidth={0.6} className="pending-icon" /><div className="pending-title">Seeing<br /><em>the signal.</em></div><p className="visual-footnote">PNEUMONIA DETECTION · ENGINEERING PROTOTYPE</p>
-    </div>}
+    {project.slug === 'sentinels' ? <SentinelsImage /> : project.slug === 'gait' ? <GaitDiagram /> : <PneumoniaImage />}
   </div>
 }
