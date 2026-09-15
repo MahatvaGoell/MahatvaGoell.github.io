@@ -53,7 +53,7 @@ export default function App() {
     <main>
       <section className="hero page-padding" aria-labelledby="hero-heading">
         <div className="hero-topline"><span>INDEPENDENT MIND. CONNECTED SYSTEMS.</span><span>BASED IN NOIDA, INDIA</span></div>
-        <h1 id="hero-heading" className="hero-title"><span className="line"><span>Mahatva</span></span><span className="line last-name"><span>Goel<span className="lime-period">.</span></span></span></h1>
+        <h1 id="hero-heading" className="hero-title"><span className="line"><span>Mahatva Goel<span className="lime-period">.</span></span></span></h1>
         <div className="hero-note"><p>AI / ML Engineer<br />& Software Developer</p><span>Building intelligent systems at the intersection of AI, software and real-world problems.</span></div>
         <div className="hero-foot"><div className="hero-socials"><ExternalLink href={profile.github}>GitHub</ExternalLink><ExternalLink href={profile.linkedin}>LinkedIn</ExternalLink><span className="unavailable" aria-label="Resume coming soon">Resume <small>soon</small></span></div><a className="scroll-invitation" href="#about"><span>A few chapters<br />of what comes next.</span><ArrowDown size={28} strokeWidth={1} /></a><span className="edition">SELECTED WORK<br />2026 EDITION</span></div>
       </section>

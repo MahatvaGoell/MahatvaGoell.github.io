@@ -344,10 +344,9 @@ em { font-weight: inherit; }
 .site-menu { top: 84px; right: var(--gutter); width: min(440px, calc(100vw - 40px)); border-radius: 3px; }
 
 .hero { min-height: min(820px, 92svh); display: flex; flex-direction: column; justify-content: center; color: var(--dark); background: #f3f6ee; --muted: #69756c; --line: #1d25211c; padding-top: 140px; padding-bottom: 62px; }
-.hero-topline { order: 0; max-width: 960px; padding-bottom: 18px; }
-.hero-title { order: 1; max-width: 930px; font-size: clamp(76px, 9vw, 148px); line-height: .9; letter-spacing: -.055em; margin-top: clamp(30px, 4vw, 52px); }
+.hero-topline { order: 0; width: 100%; max-width: none; padding-bottom: 18px; }
+.hero-title { order: 1; max-width: none; white-space: nowrap; font-size: clamp(76px, 8.4vw, 150px); line-height: .9; letter-spacing: -.055em; margin-top: clamp(30px, 4vw, 52px); }
 .hero .lime-period { color: var(--hero-accent); }
-.hero-title .last-name { margin-left: 7%; }
 .hero-note { order: 2; width: min(100%, 470px); justify-self: auto; align-self: flex-start; margin-top: clamp(28px, 4vw, 48px); }
 .hero-note p { font-size: clamp(18px, 1.45vw, 22px); }
 .hero-note > span { max-width: 390px; font-size: 14px; }
@@ -405,7 +404,7 @@ em { font-weight: inherit; }
 @media (max-width: 860px) {
   :root { --gutter: clamp(22px, 5vw, 48px); }
   .hero { min-height: 700px; }
-  .hero-title { font-size: clamp(68px, 11vw, 108px); }
+  .hero-title { font-size: clamp(68px, 10vw, 108px); }
   .intro-grid, .project-spread { grid-template-columns: 1fr; }
   .portrait-placeholder { max-width: 310px; }
   .project-visual { min-height: 340px; }
@@ -420,8 +419,7 @@ em { font-weight: inherit; }
   .hero { min-height: 640px; padding-top: 104px; padding-bottom: 34px; }
   .hero-topline { font-size: 8px; }
   .hero-topline > span:last-child { display: none; }
-  .hero-title { font-size: clamp(64px, 18vw, 92px); margin-top: 28px; }
-  .hero-title .last-name { margin-left: 4%; }
+  .hero-title { white-space: normal; font-size: clamp(64px, 18vw, 92px); margin-top: 28px; }
   .hero-note { margin-top: 24px; }
   .hero-note p { font-size: 17px; }
   .hero-note > span { font-size: 13px; }
