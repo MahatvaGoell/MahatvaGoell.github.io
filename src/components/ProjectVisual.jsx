@@ -1,12 +1,9 @@
-import { ArrowRight, Fingerprint, ScanLine } from 'lucide-react'
+import { ScanLine } from 'lucide-react'
+import sentinelsProject from '../assets/sentinels-project.jpeg'
 
-function AuditDiagram() {
-  return <div className="audit-diagram">
-    <div className="visual-caption"><span>SENTINELS / SYSTEM MAP</span><span>01—05</span></div>
-    <div className="audit-core"><Fingerprint strokeWidth={0.65} /><span>Observe.<br /><em>Understand.</em></span></div>
-    <div className="agent-pipeline">{['Headers', 'Recon', 'TLS', 'Exposure', 'DNS'].map((agent) => <span key={agent}>{agent}</span>)}</div>
-    <div className="diagram-flow"><span>Passive inspection</span><ArrowRight size={16} /><span>Deterministic score</span></div>
-    <p className="visual-footnote">CONCEPT DIAGRAM · SCREENSHOT FORTHCOMING</p>
+function SentinelsImage() {
+  return <div className="sentinels-image">
+    <img src={sentinelsProject} alt="Sentinels interface showing a GitHub repository scan" />
   </div>
 }
 
@@ -28,7 +25,7 @@ function GaitDiagram() {
 
 export default function ProjectVisual({ project }) {
   return <div className={`project-visual ${project.slug}`}>
-    {project.slug === 'sentinels' ? <AuditDiagram /> : project.slug === 'gait' ? <GaitDiagram /> : <div className="pending-diagram">
+    {project.slug === 'sentinels' ? <SentinelsImage /> : project.slug === 'gait' ? <GaitDiagram /> : <div className="pending-diagram">
       <div className="visual-caption"><span>PROJECT / 03</span><span>IN PROGRESS</span></div><ScanLine strokeWidth={0.6} className="pending-icon" /><div className="pending-title">A study<br /><em>in progress.</em></div><p className="visual-footnote">PNEUMONIA DETECTION · DOCUMENTATION FORTHCOMING</p>
     </div>}
   </div>
