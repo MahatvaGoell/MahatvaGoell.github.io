@@ -439,7 +439,7 @@ em { font-weight: inherit; }
 .recognition-row { padding: 24px 0; }
 .recognition-number { font-size: clamp(68px, 7vw, 108px); }
 .background-rows article { padding: 26px 0; }
-.contact { padding-top: var(--section-space); background: #bbc5a8; color: #303b30; --muted: #5d685a; --line: #303b3020; }
+.contact { padding-top: var(--section-space); background: linear-gradient(180deg, #f7f6f1 0%, #e9ede2 18%, #d1dac2 42%, #bbc5a8 68%, #bbc5a8 100%); color: #303b30; --muted: #5d685a; --line: #303b3020; }
 .contact-title em { color: #6f8069; }
 .contact-title { max-width: 1080px; font-size: clamp(66px, 8vw, 128px); line-height: .92; margin-top: 46px; }
 .contact-title > svg { width: clamp(42px, 6vw, 76px); height: auto; }
